@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Game = () => {
+const Rules = () => {
   return (
     <>
-    Game
+    Rules
     </>
   )
 }
 
-export default Game
+export default Rules
