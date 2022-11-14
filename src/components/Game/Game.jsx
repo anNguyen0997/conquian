@@ -1,11 +1,13 @@
-import React from 'react'
 
-const Game = () => {
-  return (
-    <>
-    Game
-    </>
-  )
+import { gamedeck } from './Deck'
+
+const Game = {
+    name: "Conquian",
+
+  setup: () => ({
+    deck: gamedeck
+  }),
+
 }
 
-export default Game
+export default Game;
