@@ -1,27 +1,3 @@
-// const suits = ["coin", "sword", "club", "cup"];
-// const value = [1, 2, 3, 4, 5, 6, 7, 10, 11, 12];
-
-// const makeDeck = (value, suit) => {                                            // Creation of deck of cards
-//     const card = {
-//       value: value,
-//       suit: suit
-//     };
-//     deck.push(card);
-//   };
-  //--------------------------------------------------------------------------------------------------------------
-//   function getDeck() {                                                          // Passes parameters of rank and suit
-//   deck = []
-//   for (const suit of suits) {                                                     // of a card
-//     for (const valu of value) {
-//       makeDeck(valu, suit);
-//     }
-//   }
-// //   shuffle(deck);
-//   return deck
-//   }
-
-
-
 let gamedeck = [
     { value: 1, suit: 'coin' },
     { value: 2, suit: 'coin' },
