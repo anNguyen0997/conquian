@@ -1,3 +1,4 @@
+
 import { gamedeck } from './Deck'
 
 const Game = {
@@ -7,8 +8,6 @@ const Game = {
     deck: gamedeck
   }),
 
-
-  
 }
 
 export default Game;
