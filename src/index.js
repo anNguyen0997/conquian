@@ -10,6 +10,7 @@ import Game from './components/Game/Game'
 import Login from './components/Login/Login'
 import Register from './components/Register/Register'
 import App from './components/Home/App'
+import "./index.css"
 
 import BaseLayout from './components/layout/BaseLayout';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
