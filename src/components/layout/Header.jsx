@@ -9,17 +9,7 @@ import {
   StarIcon,
   SparklesIcon,
   XMarkIcon,
-  ArrowPathIcon,
   Bars3Icon,
-  BookmarkSquareIcon,
-  CalendarIcon,
-  ChartBarIcon,
-  CursorArrowRaysIcon,
-  LifebuoyIcon,
-  PhoneIcon,
-  PlayIcon,
-  ShieldCheckIcon,
-  Squares2X2Icon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
@@ -47,13 +37,13 @@ const gamesRules = [
   {
     name: 'How to Play: Conquian',
     description: '',
-    href: '#',
+    href: 'https://gathertogethergames.com/conquian',
     icon: StarIcon,
   },
   {
     name: 'How to Play: Tiến Lên',
     description: '',
-    href: '#',
+    href: 'https://gathertogethergames.com/thirteen',
     icon: SparklesIcon,
   },
 ]
@@ -63,7 +53,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+export default function Header() {
   return (
     <Popover className="relative bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -192,7 +182,7 @@ export default function Example() {
                           {gamesRules.map((item) => (
                             <a
                               key={item.name}
-                              href={item.href}
+                              href={item.href} target="_blank" rel="noreferrer noopener"
                               className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
                             >
                               <item.icon className="h-6 w-6 flex-shrink-0 text-red-600" aria-hidden="true" />
