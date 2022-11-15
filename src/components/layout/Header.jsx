@@ -1,25 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import {
   StarIcon,
   SparklesIcon,
   XMarkIcon,
-  ArrowPathIcon,
   Bars3Icon,
-  BookmarkSquareIcon,
-  CalendarIcon,
-  ChartBarIcon,
-  CursorArrowRaysIcon,
-  LifebuoyIcon,
-  PhoneIcon,
-  PlayIcon,
-  ShieldCheckIcon,
-  Squares2X2Icon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
@@ -27,13 +14,13 @@ const gamesList = [
   {
     name: 'Conquian',
     description: "Conquian, also known as “Coon Can”, or the Konkar game, is a rummy style game originating from Mexico in the 1800s. This game is believed to be the originator of modern rummy.",
-    href: '#',
+    to: '/conquian',
     icon: StarIcon,
   },
   {
     name: 'Tiến Lên',
     description: "Tiến Lên is a shedding card game that's sometimes called the national card game of Vietnam! In English, it's known as Thirteen. Simliar to Poker, it's a fairly simple game, but does require some strategy to play it well.",
-    href: '#',
+    to: '/tienlen',
     icon: SparklesIcon,
   },
 
@@ -46,14 +33,14 @@ const gamesList = [
 const gamesRules = [
   {
     name: 'How to Play: Conquian',
-    description: '',
-    href: '#',
+    description: 'From GatherTogetherGames.com',
+    href: 'https://gathertogethergames.com/conquian',
     icon: StarIcon,
   },
   {
     name: 'How to Play: Tiến Lên',
-    description: '',
-    href: '#',
+    description: 'From GatherTogetherGames.com',
+    href: 'https://gathertogethergames.com/thirteen',
     icon: SparklesIcon,
   },
 ]
@@ -63,20 +50,20 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Example() {
+export default function Header() {
   return (
     <Popover className="relative bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex items-center justify-between border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
-            <a href="#">
+            <Link to="/">
               <span className="sr-only"></span>
               <img
-                className="h-8 w-auto sm:h-10"
+                className="h-12 w-auto sm:h-14"
                 src="https://cdn-icons-png.flaticon.com/512/1055/1055837.png"
                 alt=""
               />
-            </a>
+            </Link>
           </div>
           <div className="-my-2 -mr-2 md:hidden">
             <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500">
@@ -117,9 +104,9 @@ export default function Example() {
                       <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                         <div className="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
                           {gamesList.map((item) => (
-                            <a
+                            <Link
                               key={item.name}
-                              href={item.href}
+                              to={item.to}
                               className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
                             >
                               <item.icon className="h-6 w-6 flex-shrink-0 text-red-600" aria-hidden="true" />
@@ -127,7 +114,7 @@ export default function Example() {
                                 <p className="text-base font-medium text-gray-900">{item.name}</p>
                                 <p className="mt-1 text-sm text-gray-500">{item.description}</p>
                               </div>
-                            </a>
+                            </Link>
                           ))}
                         </div>
                         {/* FUTURE FEATURE - SUGGEST MORE GAMES */}
@@ -151,9 +138,9 @@ export default function Example() {
               )}
             </Popover>
 
-            <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
+            <Link to="/aboutus" className="text-base font-medium text-gray-500 hover:text-gray-900">
               About Us
-            </a>
+            </Link>
             {/* <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
               Docs
             </a> */}
@@ -192,7 +179,7 @@ export default function Example() {
                           {gamesRules.map((item) => (
                             <a
                               key={item.name}
-                              href={item.href}
+                              href={item.href} target="_blank" rel="noreferrer noopener"
                               className="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50"
                             >
                               <item.icon className="h-6 w-6 flex-shrink-0 text-red-600" aria-hidden="true" />
@@ -212,15 +199,15 @@ export default function Example() {
             </Popover>
           </Popover.Group>
           <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-            <a href="#" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
+            <Link to="/login" className="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
               Sign in
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/register"
               className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700"
             >
               Sign up
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -255,25 +242,25 @@ export default function Example() {
               <div className="mt-6">
                 <nav className="grid gap-y-8">
                   {gamesList.map((item) => (
-                    <a
+                    <Link
                       key={item.name}
-                      href={item.href}
+                      to={item.to}
                       className="-m-3 flex items-center rounded-md p-3 hover:bg-gray-50"
                     >
                       <item.icon className="h-6 w-6 flex-shrink-0 text-red-600" aria-hidden="true" />
                       <span className="ml-3 text-base font-medium text-gray-900">{item.name}</span>
-                    </a>
+                    </Link>
                   ))}
                 </nav>
               </div>
             </div>
             <div className="space-y-6 py-6 px-5">
               <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                <Link href="/aboutus" className="text-base font-medium text-gray-900 hover:text-gray-700">
                   About Us
-                </a>
+                </Link>
 
-                <a href="#" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                <a href="https://github.com/anNguyen0997/conquian" target="_blank" rel="noopener noreferrer" className="text-base font-medium text-gray-900 hover:text-gray-700">
                   GitHub
                 </a>
                 {gamesRules.map((item) => (
@@ -287,17 +274,17 @@ export default function Example() {
                 ))}
               </div>
               <div>
-                <a
-                  href="#"
+                <Link
+                  to="/register"
                   className="flex w-full items-center justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700"
                 >
                   Sign up
-                </a>
+                </Link>
                 <p className="mt-6 text-center text-base font-medium text-gray-500">
                   Existing player?{' '}
-                  <a href="#" className="text-red-600 hover:text-red-500">
+                  <Link to="/login" className="text-red-600 hover:text-red-500">
                     Sign in
-                  </a>
+                  </Link>
                   <p className="mt-8 text-center text-base text-gray-400">"Team Astro" from DigitalCrafts, Cohort of August, 2022</p>
                 </p>
               </div>
