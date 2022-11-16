@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react'
+import axios from 'axios'
 
 const Register = () => {
 
@@ -10,6 +11,14 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
+    axios.post('http://localhost:3000/register', {
+      username: username,
+      email: email,
+      password: password
+    }).then(() => {
+      console.log("success")
+    })
 
     const addingUser = () => {
       // dispatch (addUser(email, username, encryptPassword))
