@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 
 const Login = () => {
 
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
+  // const [username, setUsername] = useState("")
+  // const [password, setPassword] = useState("")
   
-  const handleLogin = () => {
+  // const handleLogin = () => {
     
     axios.post('http://localhost:3001/login', {
       username: username,
@@ -15,7 +15,7 @@ const Login = () => {
     }).then((response) => {
       console.log(response)
     })
-  }
+
   return (      
     <>
       <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -147,7 +147,6 @@ const Login = () => {
     </>
   )
 }
-
 export default Login
 
 // <div>
