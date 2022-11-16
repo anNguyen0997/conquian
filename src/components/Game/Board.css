@@ -1,0 +1,18 @@
+#Game{
+    background-color: burlywood;
+    height: 500px;
+}
+
+#Table{
+    background-color: chartreuse;
+    height: 400px;
+    margin: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#deck {
+    display: flex;
+    width: 100px;
+    flex-wrap: wrap;
+}
