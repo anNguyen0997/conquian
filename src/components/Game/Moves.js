@@ -1,7 +1,6 @@
 import { INVALID_MOVE } from 'boardgame.io/core';
 import { current } from 'immer';     // current(G) lets you read G as an Obj instead of proxy
 
-<<<<<<< HEAD
 export default function getHand(G, ctx) {
 
 }
@@ -25,7 +24,6 @@ export default function passCard(G, ctx) {
 export default function selectCard(G, ctx) {
 
 }
-=======
 export function giveCard({G, ctx, events},cardIndex) {
 
     G.round += 1
@@ -145,4 +143,3 @@ function checkStraight(cards) { //cards is an array
     }
     return true
 }
->>>>>>> origin
