@@ -1,17 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 // const Login = () => {
 
-//   const handleSubmit = (e) => {
-//     e.preventDefault()
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+  
+  const handleLogin = () => {
+    
 
-//     // dispatch(login(username, password))
-//   }
+    axios.post('http://localhost:3001/login', {
+      username: username,
+      password: password
+    }).then((response) => {
+      console.log(response)
+    })
+  }
 
-//   return (
-//     <>
-//       Login
 
 //       <div>
 //         <form onSubmit={handleSubmit}>
@@ -20,12 +26,21 @@ import { Link } from 'react-router-dom'
 //           <input type="submit" />
 //         </form>
 //       </div>
-//     </>
-//   )
-// }
+
 
 export default function Login() {
   return (
+      
+      // <div>
+      //   <form onSubmit={handleLogin}>
+      //     <input type="text" placeholder="username" onChange={(e) => {setUsername(e.target.value)}}/>
+      //     <input type="password" placeholder="password" onChange={(e) => {setPassword(e.target.value)}}/>
+      //     <input type="submit" />
+      //     <button onClick={handleLogin}>sign in</button>
+      //   </form>
+
+      //   <html class="h-full bg-gray-50">
+      //   <body class="h-full">
     <>
       <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -152,6 +167,7 @@ export default function Login() {
           </div>
         </div>
       </div>
+
     </>
   )
 }

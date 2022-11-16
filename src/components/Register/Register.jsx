@@ -2,34 +2,31 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+// import { v4 as uuidv4 } from 'uuid' 
 
 const Register = () => {
 
+  // const [id, setID] = useState("")
   const [email, setEmail] = useState("")
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
-  const [encryptPassword, setEncryptPassword] = useState("")
+  const [usernameReg, setUsernameReg] = useState("")
+  const [passwordReg, setPasswordReg] = useState("")
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
+  
+  const handleRegister = () => {
 
-    axios.post('http://localhost:3000/register', {
-      username: username,
+    axios.post('http://localhost:3001/register', {
+      // id: id,
+      username: usernameReg,
       email: email,
-      password: password
+      password: passwordReg
     }).then(() => {
       console.log("success")
     })
 
-    const addingUser = () => {
-      // dispatch (addUser(email, username, encryptPassword))
-
-    }
-
+    // setID("")
     setEmail("")
-    setUsername("")
-    setPassword("")
-    setEncryptPassword("")
+    setUsernameReg("")
+    setPasswordReg("")
   }
 
   // Password Validation
@@ -257,13 +254,15 @@ const Register = () => {
       Register
 
       <div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleRegister}>
 
-          <input type="email" placeholder="email" />
-          <input type="text" placeholder="username" />
-          <input type="password" placeholder="password" />
+          {/* <input type="number" placeholder="id" onChange={(e) => {setID(e.target.value)}}/> */}
+          <input type="email" placeholder="email" onChange={(e) => {setEmail(e.target.value)}}/>
+          <input type="text" placeholder="username" onChange={(e) => {setUsernameReg(e.target.value)}}/>
+          <input type="password" placeholder="password" onChange={(e) => {setPasswordReg(e.target.value)}}/>
 
           <input type="submit"/>
+          {/* <button onClick={handleRegister}>sign up</button> */}
 
         </form>
       </div>

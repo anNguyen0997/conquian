@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom/client';
 import {createStore} from 'redux'
 import reducer from './reducer/reducer';
 import { Provider } from 'react-redux';
-import "./index.css"
 
 import BaseLayout from './components/layout/BaseLayout';
 // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
