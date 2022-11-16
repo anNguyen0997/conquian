@@ -5,12 +5,6 @@ import {createStore} from 'redux'
 import reducer from './reducer/reducer';
 import { Provider } from 'react-redux';
 
-import Rules from './components/Rules/Rules'
-import Game from './components/Game/Conquian'
-import Login from './components/Login/Login'
-import Register from './components/Register/Register'
-import App from './components/Home/App'
-
 import BaseLayout from './components/layout/BaseLayout';
 // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom'
