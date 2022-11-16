@@ -1,6 +1,6 @@
-
 import React, { useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 // const Login = () => {
 
@@ -30,22 +30,18 @@ import axios from 'axios'
 
 export default function Login() {
   return (
-    <>
-      {/*
-        This example requires updating your template:
+      
+      // <div>
+      //   <form onSubmit={handleLogin}>
+      //     <input type="text" placeholder="username" onChange={(e) => {setUsername(e.target.value)}}/>
+      //     <input type="password" placeholder="password" onChange={(e) => {setPassword(e.target.value)}}/>
+      //     <input type="submit" />
+      //     <button onClick={handleLogin}>sign in</button>
+      //   </form>
 
-      <div>
-        <form onSubmit={handleLogin}>
-          <input type="text" placeholder="username" onChange={(e) => {setUsername(e.target.value)}}/>
-          <input type="password" placeholder="password" onChange={(e) => {setPassword(e.target.value)}}/>
-          <input type="submit" />
-          {/* <button onClick={handleLogin}>sign in</button> */}
-        {/* </form> */}
-        ```
-        <html class="h-full bg-gray-50">
-        <body class="h-full">
-        ```
-    
+      //   <html class="h-full bg-gray-50">
+      //   <body class="h-full">
+    <>
       <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <img
@@ -122,7 +118,7 @@ export default function Login() {
               </div>
             </form>
 
-            <p  className="mt-6 relative flex justify-center text-sm font-medium text-gray-700"> Don't have an account? Register.</p>
+            <p  className="mt-6 relative flex justify-center text-sm font-medium text-gray-700"> Don't have an account? <Link to="/register" className='indent-1 underline underline-offset-1 text-red-500'>  Register.</Link></p>
 
             <div className="mt-6">
               <div className="relative">
@@ -171,6 +167,7 @@ export default function Login() {
           </div>
         </div>
       </div>
-    </html>
+
+    </>
   )
 }
