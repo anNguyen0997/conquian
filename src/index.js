@@ -6,7 +6,7 @@ import reducer from './reducer/reducer';
 import { Provider } from 'react-redux';
 
 import Rules from './components/Rules/Rules'
-import Game from './components/Game/Game'
+// import Game from './components/Game/Game'
 import Login from './components/Login/Login'
 import Register from './components/Register/Register'
 import App from './components/Home/App'
@@ -29,7 +29,7 @@ root.render(
           <Routes>
             <Route path="/" element={ <App/> } />
             <Route path="/rules" element={ <Rules/> } />
-            <Route path="/game" element={ <Game/> } />
+            {/* <Route path="/game" element={ <Game/> } /> */}
             <Route path="/register" element={ < Register/> } />
             <Route path="/login" element={ < Login/> } />
           </Routes>
