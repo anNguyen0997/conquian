@@ -6,7 +6,7 @@ import reducer from './reducer/reducer';
 import { Provider } from 'react-redux';
 
 import Rules from './components/Rules/Rules'
-import Game from './components/Game/Game'
+import Game from './components/Game/Conquian'
 import Login from './components/Login/Login'
 import Register from './components/Register/Register'
 import App from './components/Home/App'
