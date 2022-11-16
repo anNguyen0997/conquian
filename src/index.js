@@ -9,8 +9,6 @@ import BaseLayout from './components/layout/BaseLayout';
 // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom'
 
-
-
 const store = createStore(reducer)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
