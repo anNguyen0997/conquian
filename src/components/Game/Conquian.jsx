@@ -1,10 +1,10 @@
-// import { Board } from './Board';
-// import { Game } from './Game'
+import { Board } from './Board';
+import { Game } from './Game'
 
-// const Conquian = Client({
-//   game: Game,
-//   board: Board,
-//   numPlayers: 3
-// });
+const Conquian = Client({
+  game: Game,
+  board: Board,
+  numPlayers: 3
+});
 
-// export default Conquian;
+export default Conquian;

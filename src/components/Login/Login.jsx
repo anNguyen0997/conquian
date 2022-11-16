@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 // const Login = () => {
 
@@ -23,31 +24,9 @@ import React from 'react'
 //   )
 // }
 
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
 export default function Login() {
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-gray-50">
-        <body class="h-full">
-        ```
-      */}
       <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <img
@@ -124,7 +103,7 @@ export default function Login() {
               </div>
             </form>
 
-            <p  className="mt-6 relative flex justify-center text-sm font-medium text-gray-700"> Don't have an account? Register.</p>
+            <p  className="mt-6 relative flex justify-center text-sm font-medium text-gray-700"> Don't have an account? <Link to="/register" className='indent-1 underline underline-offset-1 text-red-500'>  Register.</Link></p>
 
             <div className="mt-6">
               <div className="relative">
