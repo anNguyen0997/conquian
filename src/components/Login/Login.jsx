@@ -9,12 +9,12 @@ const Login = () => {
   
   // const handleLogin = () => {
     
-    axios.post('http://localhost:3001/login', {
-      username: username,
-      password: password
-    }).then((response) => {
-      console.log(response)
-    })
+    // axios.post('http://localhost:3001/login', {
+    //   username: username,
+    //   password: password
+    // }).then((response) => {
+    //   console.log(response)
+    // })
 
   return (      
     <>
