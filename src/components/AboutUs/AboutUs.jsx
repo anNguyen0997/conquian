@@ -2,11 +2,27 @@ import React from 'react'
 
 const people = [
     {
-      name: 'Lindsay Walton',
-      role: 'Front-end Developer',
+      name: 'Jonathan Batalla',
+      role: 'Developed the game and its logic',
       imageUrl:
         'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-      twitterUrl: '#',
+        bio: 'Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.',
+      linkedinUrl: '#',
+    },
+    {
+      name: 'An Nguyen',
+      role: 'Developed the back-end using MySQL',
+      imageUrl:
+        'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+        bio: 'Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.',
+      linkedinUrl: '#',
+    },
+    {
+      name: 'Khanh Trinh',
+      role: 'Developed the front-end using mainly React.JS & TailwindCSS',
+      imageUrl:
+        'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
+        bio: 'Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.',
       linkedinUrl: '#',
     },
     // More people...
@@ -20,8 +36,7 @@ const people = [
             <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Our Team</h2>
               <p className="text-xl text-gray-500">
-                Odio nisi, lectus dis nulla. Ultrices maecenas vitae rutrum dolor ultricies donec risus sodales. Tempus
-                quis et.
+                This is our final capstone project from DigitalCrafts, developed by our team, all from the Greater Houston area of Texas. 
               </p>
             </div>
             <ul
@@ -38,17 +53,10 @@ const people = [
                     <div className="space-y-2">
                       <div className="space-y-1 text-lg font-medium leading-6">
                         <h3>{person.name}</h3>
-                        <p className="text-indigo-600">{person.role}</p>
+                        <p className="text-red-600">{person.role}</p>
                       </div>
                       <ul role="list" className="flex space-x-5">
-                        <li>
-                          <a href={person.twitterUrl} className="text-gray-400 hover:text-gray-500">
-                            <span className="sr-only">Twitter</span>
-                            <svg className="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
-                              <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
-                            </svg>
-                          </a>
-                        </li>
+
                         <li>
                           <a href={person.linkedinUrl} className="text-gray-400 hover:text-gray-500">
                             <span className="sr-only">LinkedIn</span>
