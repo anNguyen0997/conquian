@@ -18,7 +18,7 @@ const gamesList = [
     icon: StarIcon,
   },
   {
-    name: 'Tiến Lên',
+    name: '[COMING SOON] Tiến Lên',
     description: "Tiến Lên is a shedding card game that's sometimes called the national card game of Vietnam! In English, it's known as Thirteen. Simliar to Poker, it's a fairly simple game, but does require some strategy to play it well.",
     to: '/tienlen',
     icon: SparklesIcon,
