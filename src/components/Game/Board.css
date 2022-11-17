@@ -1,18 +1,69 @@
 #Game{
-    background-color: burlywood;
-    height: 500px;
+    background-color:darkgray;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#Table{
-    background-color: chartreuse;
-    height: 400px;
-    margin: 50px;
+#TableBorder{
+    background-color:brown;
+    height: 80%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10pc;
+
+
+}
+
+#TableInline{
+    background-color: darkgreen;
+    height: 95%;
+    width: 97%;
+    border-radius: 10pc;
+    
+}
+
+img{
+    border-radius: 5px;
+    margin: 5px;
+}
+
+#gameArea{
+    height: 80%;
+    width: 100%;
+}
+
+#deck{
+    display: flex;
+   
+}
+
+#Oppenents{
     display: flex;
     justify-content: space-around;
+    height: 30%;
 }
 
-#deck {
+#PlayerCards{
     display: flex;
-    width: 100px;
-    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 20%;
+}
+
+#theDeck{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+
+}
+
+#player{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
