@@ -6,32 +6,28 @@ import { Link } from 'react-router-dom'
 
 const Register = () => {
 
-  // const [id, setID] = useState("")
-  const [email, setEmail] = useState("")
-  const [usernameReg, setUsernameReg] = useState("")
-  const [passwordReg, setPasswordReg] = useState("")
-
-  
-  const handleRegister = () => {
+  const handleRegister = (e) => {
+    e.preventDefault()
 
     axios.post('http://localhost:3001/register', {
       // id: id,
-      username: usernameReg,
-      email: email,
-      password: passwordReg
+      username: input.username,
+      email: input.email,
+      password: input.password
     }).then(() => {
       console.log("success")
     })
 
-    // setID("")
-    setEmail("")
-    setUsernameReg("")
-    setPasswordReg("")
+    setInput({
+      username: '',
+      email: '',
+      password: '',
+      confirmPassword: ''
+    })
   }
 
   // Password Validation
 
-  
   const [input, setInput] = useState({
     username: '',
     email: '',
@@ -108,7 +104,7 @@ const Register = () => {
 
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
           <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-            <form className="space-y-6" action="#" method="POST">
+            <form className="space-y-6" action="#" method="POST" onSubmit={handleRegister}>
 
             <div>
                 <label htmlFor="username" className="block text-sm font-medium text-gray-700">
@@ -249,22 +245,6 @@ const Register = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      Register
-
-      <div>
-        <form onSubmit={handleRegister}>
-
-          {/* <input type="number" placeholder="id" onChange={(e) => {setID(e.target.value)}}/> */}
-          <input type="email" placeholder="email" onChange={(e) => {setEmail(e.target.value)}}/>
-          <input type="text" placeholder="username" onChange={(e) => {setUsernameReg(e.target.value)}}/>
-          <input type="password" placeholder="password" onChange={(e) => {setPasswordReg(e.target.value)}}/>
-
-          <input type="submit"/>
-          {/* <button onClick={handleRegister}>sign up</button> */}
-
-        </form>
       </div>
     </>
   )
