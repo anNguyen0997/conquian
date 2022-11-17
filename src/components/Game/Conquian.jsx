@@ -1,30 +1,29 @@
 import { default as Board } from './Board';
 import { Game } from './Game'
 import { Client } from "boardgame.io/react";
-// import { Local } from 'boardgame.io/multiplayer'
+import { Local } from 'boardgame.io/multiplayer'
 // import { SocketIO } from 'boardgame.io/multiplayer'
 
 const Conquian = Client({
   game: Game,
   board: Board,
   numPlayers: 3,
-  playOrderPos: 1
+  multiplayer: Local(),
+  debug: true
 });
 
-export default Conquian;
 
-// const TicTacToeClient = Client({
-//   game: TicTacToe,
-//   board: TicTacToeBoard,
-//   multiplayer: Local(),
-// });
+const App = () => (
+  <div>
+    <Conquian playerID="0" />
+    <Conquian playerID="1" />
+    <Conquian playerID="2" />
+  </div>
+);
 
-// const App = () => (
-//   <div>
-//     <TicTacToeClient playerID="0" />
-//     <TicTacToeClient playerID="1" />
-//   </div>
-// );
+export default App;
+
+
 
 // const TicTacToeClient = Client({
 //   game: TicTacToe,

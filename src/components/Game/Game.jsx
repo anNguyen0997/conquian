@@ -64,7 +64,7 @@ function setUp(Obj) {
       deck,
       winner: -1,
       givenCards:[],
-      stageCard: {},
+      stageCard: {suit: 'joker', value: 1, order: 1},
       round: 0,
   }
 

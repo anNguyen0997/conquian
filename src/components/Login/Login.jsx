@@ -1,20 +1,29 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Login = () => {
 
-  const [username, setUsername] = useState("")
+  const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [loginStatus, setLoginStatus] = useState("")
   
-  const handleLogin = () => {
-    
+  const handleLogin = (e) => {
+    e.preventDefault()
+
     axios.post('http://localhost:3001/login', {
-      username: username,
+      email: email,
       password: password
     }).then((response) => {
-      console.log(response)
+      if (response.data.message) {
+        setLoginStatus(response.data.message)
+      } else {
+        setLoginStatus(response.data[0].username)
+      }
+
     })
+
+  }
 
   return (      
     <>
@@ -31,7 +40,7 @@ const Login = () => {
 
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
           <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-            <form className="space-y-6" action="#" method="POST">
+            <form className="space-y-6" action="#" method="POST" onSubmit={handleLogin}>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                   Email address
@@ -44,6 +53,7 @@ const Login = () => {
                     autoComplete="email"
                     required
                     className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-red-500 focus:outline-none focus:ring-red-500 sm:text-sm"
+                    onChange={(e) => {setEmail(e.target.value)}}
                   />
                 </div>
               </div>
@@ -60,9 +70,12 @@ const Login = () => {
                     autoComplete="current-password"
                     required
                     className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-red-500 focus:outline-none focus:ring-red-500 sm:text-sm"
+                    onChange={(e) => {setPassword(e.target.value)}}
                   />
                 </div>
               </div>
+
+              <h2>{loginStatus}</h2>
 
               <div className="flex items-center justify-between">
                 <div className="flex items-center">
@@ -88,13 +101,12 @@ const Login = () => {
                 <button
                   type="submit"
                   className="flex w-full justify-center rounded-md border border-transparent bg-red-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
-                >
-                  Sign in
+                > Sign in
                 </button>
               </div>
             </form>
 
-            <p  className="mt-6 relative flex justify-center text-sm font-medium text-gray-700"> Don't have an account? <Link to="/register" className='indent-1 underline underline-offset-1 text-red-500'>  Register.</Link></p>
+            <p  className="mt-6 relative flex justify-center text-sm font-medium text-gray-700"> Don't have an account? <Link to="/register" className='indent-1 underline underline-offset-1 text-red-500'>  Sign Up.</Link></p>
 
             <div className="mt-6">
               <div className="relative">
@@ -149,14 +161,6 @@ const Login = () => {
 }
 }
 export default Login
-
-// <div>
-      //   <form onSubmit={handleLogin}>
-      //     <input type="text" placeholder="username" onChange={(e) => {setUsername(e.target.value)}}/>
-      //     <input type="password" placeholder="password" onChange={(e) => {setPassword(e.target.value)}}/>
-      //     <input type="submit" />
-      //     <button onClick={handleLogin}>sign in</button>
-      //   </form>
 
       //   <html class="h-full bg-gray-50">
       //   <body class="h-full">
