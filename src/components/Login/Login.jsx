@@ -162,7 +162,7 @@ const Login = () => {
     </>
   )
 }
-}
+
 export default Login
 
       //   <html class="h-full bg-gray-50">
