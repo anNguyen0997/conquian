@@ -1,41 +1,45 @@
 
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
-// import { v4 as uuidv4 } from 'uuid' 
+import { Link, useNavigate } from 'react-router-dom'
+
 
 const Register = () => {
+  const navigate = useNavigate()
 
   const handleRegister = (e) => {
     e.preventDefault()
-
-    if (input.password !== input.confirmPassword) {
-      setRegisterStatus('Please make sure passwords match.')
+    // if passwords do not match
+    if (input.password !== input.confirmPassword) { 
+      setMatchPasswords('Please make sure passwords match.')
     } else {
+      // register user if passwords match
       axios.post('http://localhost:3001/register', {
-        // id: id,
         username: input.username,
         email: input.email,
         password: input.password
       }).then((response) => {
-        if (response.data.message) {
-          console.log(response.data.message)
-        } else {
-          console.log('success')
+        if (response.data.message === 'This email already exists.') {
+          console.log(response.data)
+          setEmailExists(response.data.message)
+        } else if (response.data.message === 'registration successful') {
+          navigate('/login')
+          console.log(response.data)
+          // resetting inputs to empty strings
+          setInput({
+            username: '',
+            email: '',
+            password: '',
+            confirmPassword: ''
+          })
         }
-      })
-      setInput({
-        username: '',
-        email: '',
-        password: '',
-        confirmPassword: ''
       })
     }
   }
 
-  // Password Validation
-
-  const [registerStatus, setRegisterStatus] = useState("")
+  // states for existing emails and matching password status
+  const [emailExists, setEmailExists] = useState("")
+  const [matchPasswords, setMatchPasswords] = useState("")
 
   const [input, setInput] = useState({
     username: '',
@@ -127,7 +131,7 @@ const Register = () => {
                     autoComplete="username"
                     required
                     value={input.username}
-                    pattern="^[a-zA-Z0-9]{4,10}$"
+                    pattern="^[a-zA-Z0-9]{2,10}$"
                     title="Must not include special characters."
                     onChange={onInputChange}
                     onBlur={validateInput}
@@ -157,6 +161,8 @@ const Register = () => {
                 </div>
               </div>
 
+              <h4>{emailExists}</h4>
+
               <div>
                 <label htmlFor="password" className="block text-sm font-medium text-gray-700">
                   Password
@@ -169,8 +175,8 @@ const Register = () => {
                     autoComplete="current-password"
                     required
                     value={input.password}
-                    pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,20}$" 
-                    title="Must contain at least one letter and one number, character min-max(6 - 20)"
+                    // pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,20}$" 
+                    // title="Must contain at least one letter and one number, character min-max(6 - 20)"
                     onChange={onInputChange}
                     onBlur={validateInput}
                     className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-red-500 focus:outline-none focus:ring-red-500 sm:text-sm"
@@ -196,7 +202,7 @@ const Register = () => {
                     className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-red-500 focus:outline-none focus:ring-red-500 sm:text-sm"
                   />
                   {/* {error.confirmPassword && <span className='err'>{error.confirmPassword}</span>} */}
-                  <h4>{registerStatus}</h4>
+                  <h4>{matchPasswords}</h4>
                 </div>
               </div>
 
