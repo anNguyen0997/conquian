@@ -1,29 +1,32 @@
 import React from 'react'
+import teamimage1 from '../../asset/teamimg/1BFBF73E-263A-40A1-9AFF-7833FAD49C90-2.jpg'
+import teamimage2 from '../../asset/teamimg/95E26AD8-5E04-4E81-A71B-D06730887256-2.jpg'
+import teamimage3 from '../../asset/teamimg/PXL_20220313_211012637-2.jpg'
+
 
 const people = [
     {
       name: 'Jonathan Batalla',
-      role: 'Developed the game and its logic',
+      role: 'Developed the game, board and its logic',
       imageUrl:
-        'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-        bio: 'Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.',
-      linkedinUrl: '#',
+      teamimage1,
+        bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab laborum optio illum est amet vel corporis libero aperiam, adipisci officiis architecto quos repudiandae a facere sit culpa, possimus minus praesentium!',
+      linkedinUrl: 'https://www.linkedin.com/in/jonathan-batalla-2b2052249/',
     },
     {
       name: 'An Nguyen',
-      role: 'Developed the back-end using MySQL',
-      imageUrl:
-        'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-        bio: 'Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.',
-      linkedinUrl: '#',
+      role: 'Developed the back-end using MySQL, including back-end login & registration validation',
+      imageUrl: teamimage2,
+        bio: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi nihil cum labore quia sed. Exercitationem nobis pariatur, optio aperiam odio recusandae quam incidunt repellendus numquam consequuntur iusto doloribus voluptas quae?',
+      linkedinUrl: 'https://www.linkedin.com/in/an-nguyen09/',
     },
     {
       name: 'Khanh Trinh',
-      role: 'Developed the front-end using mainly React.JS & TailwindCSS',
+      role: 'Developed the front-end using React.JS, TailwindCSS, & Headless UI',
       imageUrl:
-        'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80',
-        bio: 'Ultricies massa malesuada viverra cras lobortis. Tempor orci hac ligula dapibus mauris sit ut eu. Eget turpis urna maecenas cras. Nisl dictum.',
-      linkedinUrl: '#',
+        teamimage3,
+        bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt incidunt iste vero eligendi laboriosam commodi tenetur ipsam numquam amet repellat, consequuntur voluptas debitis facere eum, voluptatibus repudiandae, excepturi dolorum unde.',
+      linkedinUrl: 'https://www.linkedin.com/in/kqtrinh87/',
     },
     // More people...
   ]
@@ -34,7 +37,7 @@ const people = [
         <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8 lg:py-24">
           <div className="space-y-12">
             <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Our Team</h2>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-decoration-line: underline underline-offset-4 decoration-red-600">Our Team</h2>
               <p className="text-xl text-gray-500">
                 This is our final capstone project from DigitalCrafts, developed by our team, all from the Greater Houston area of Texas. 
               </p>
@@ -47,7 +50,7 @@ const people = [
                 <li key={person.name}>
                   <div className="space-y-4">
                     <div className="aspect-w-3 aspect-h-2">
-                      <img className="rounded-lg object-cover shadow-lg" src={person.imageUrl} alt="" />
+                      <img className="rounded-lg object-cover shadow-lg border-solid border-2 border-red-400" src={person.imageUrl} alt="Oh no" />
                     </div>
   
                     <div className="space-y-2">
@@ -55,10 +58,13 @@ const people = [
                         <h3>{person.name}</h3>
                         <p className="text-red-600">{person.role}</p>
                       </div>
+                      <div className="text-lg">
+                      <p className="text-gray-500">{person.bio}</p>
+                    </div>
                       <ul role="list" className="flex space-x-5">
 
                         <li>
-                          <a href={person.linkedinUrl} className="text-gray-400 hover:text-gray-500">
+                          <a href={person.linkedinUrl} className="text-gray-400 hover:text-gray-500" target="_blank" rel="noopener noreferrer">
                             <span className="sr-only">LinkedIn</span>
                             <svg className="h-5 w-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20">
                               <path
