@@ -7,6 +7,7 @@ const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [loginStatus, setLoginStatus] = useState("")
+  const [authenticated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated") || false))
   
   const handleLogin = (e) => {
     e.preventDefault()
@@ -18,6 +19,8 @@ const Login = () => {
       if (response.data.message) {
         setLoginStatus(response.data.message)
       } else {
+        setAuthenticated(true)
+        localStorage.setItem("authenticated", true)
         setLoginStatus(response.data[0].username)
       }
 
