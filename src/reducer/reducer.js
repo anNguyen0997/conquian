@@ -3,7 +3,7 @@ const reducer = (state, action) => {
     if (state === undefined) {
         state = {
             count: 0,
-            users: []
+            isLoggedIn: false
         }
     }
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+
 import axios from 'axios'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 
 const Login = () => {
 
@@ -16,12 +17,12 @@ const Login = () => {
       email: email,
       password: password
     }).then((response) => {
+      console.log(response)
       if (response.data.message) {
         setLoginStatus(response.data.message)
       } else {
-        setAuthenticated(true)
-        localStorage.setItem("authenticated", true)
-        setLoginStatus(response.data[0].username)
+       
+        
       }
 
     })
