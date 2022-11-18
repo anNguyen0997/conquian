@@ -229,7 +229,7 @@ export default function Header() {
                   <img
                     className="h-8 w-auto"
                     src="https://cdn-icons-png.flaticon.com/512/1055/1055837.png"
-                    alt="Your Company"
+                    alt=""
                   />
                 </div>
                 <div className="-mr-2">
@@ -256,7 +256,7 @@ export default function Header() {
             </div>
             <div className="space-y-6 py-6 px-5">
               <div className="grid grid-cols-2 gap-y-4 gap-x-8">
-                <Link href="/aboutus" className="text-base font-medium text-gray-900 hover:text-gray-700">
+                <Link to="/aboutus" className="text-base font-medium text-gray-900 hover:text-gray-700">
                   About Us
                 </Link>
 
