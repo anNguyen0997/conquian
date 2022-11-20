@@ -1,4 +1,5 @@
-import { giveCard, takeCard, drawCard, passCard, selectCard, endRound, sortDeckBySuit, sortDeckByValue } from './Moves'
+
+import { giveCard, takeCard, drawCard, passCard, selectCard, endRound, sortDeckBySuit, sortDeckByValue, payCard } from './Moves'
 import { TurnOrder } from 'boardgame.io/core';
 
 
@@ -11,25 +12,33 @@ export const Game = {
         sortDeckBySuit,
         sortDeckByValue,
         endRound,
+        selectCard,
     },
     turn: {
       order: TurnOrder.DEFAULT,
+      stages:{
+        pay:{
+          moves: {
+            payCard,
+          }
+        }
+      }
     },
     phases: {
       give: {
-        moves: { giveCard },
+        moves: { giveCard,sortDeckBySuit,sortDeckByValue,selectCard },
         start: true,
         next: 'take',
         endIf: ({G}) => (G.round === 3),
         onEnd: ({G}) => {G.round = 0}
       },
       take: {
-        moves: { takeCard },
+        moves: { takeCard,sortDeckBySuit,sortDeckByValue },
         endIf: ({G}) => (G.round === 3),
         onEnd: ({G}) => {G.round = 0}
       },
        draw: {
-        moves: {passCard, selectCard, sortDeckBySuit, sortDeckByValue,},
+        moves: {passCard, selectCard, sortDeckBySuit, sortDeckByValue, payCard},
         turn: {
           order: {
             first: ({ ctx }) => ctx.playOrderPos ,
@@ -51,13 +60,13 @@ function setUp(Obj) {
  for (const suit of suits) {      // Make Deck   
    let i = 1                              
    for (const value of values) {
-     deck.push({ suit: suit, value: value, order: i});
+     deck.push({ suit: suit, value: value, order: i, id:suit+value, selected: false});
      i += 1
    }
  }
   deck = Obj.random.Shuffle(deck)
   
-  let player1 = { id:0 , cardsDown:[] , hand:deck.splice(0,8), drew: false}; let player2 = { id:1 , cardsDown:[] , hand:deck.splice(0,8), drew: false}; let player3 = { id:2 , cardsDown:[] , hand:deck.splice(0,8), drew: false}
+  let player1 = { id:0 , cardsDown:[] , hand:deck.splice(0,8), drew: false, selected:[]}; let player2 = { id:1 , cardsDown:[] , hand:deck.splice(0,8), drew: false, selected:[]}; let player3 = { id:2 , cardsDown:[] , hand:deck.splice(0,8), drew: false, selected:[]}
 
   return {
       players: [player1, player2, player3],
