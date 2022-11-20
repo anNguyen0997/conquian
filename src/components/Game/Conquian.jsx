@@ -12,7 +12,6 @@ const Conquian = Client({
   debug: true
 });
 
-
 const App = () => (
   <div>
     <Conquian playerID="0" />
@@ -23,10 +22,12 @@ const App = () => (
 
 export default App;
 
-
-
-// const TicTacToeClient = Client({
-//   game: TicTacToe,
-//   board: TicTacToeBoard,
+// const Conquian = Client({
+//   game: Game,
+//   board: Board,
+//   numPlayers: 3,
 //   multiplayer: SocketIO({ server: 'localhost:8000' }),
+//   debug: true
 // });
+
+// export default Conquian

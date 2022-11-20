@@ -1,13 +1,39 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 
 function Hand({card,index,handleClick}) {
 
+  const [isClicked,setClick] = useState(false)
+
+  function handleClick() {
+    
+    if(user.id == user.turn){
+      selectCard(index)
+
+      if(isClicked === false){
+        setClick(true)
+      }
+      else{
+        setClick(false)
+      }
+    }
+    else{
+      console.log('not your turn')
+    }
+   
+  }
   
 
   return (
     <div>
-        <img src={require(`../../../asset/SpanishPlayingCards/${card.suit+card.value}.jpg`)}  height='50px' width='25px' onClick={() => handleClick(index)}></img>
+       {isClicked ?  
+        <div id='selected'>
+           <img src={require(`../../../SpanishPlayingCards/${card.suit+card.value}.jpg`)}  height='75px' width='50px' onClick={() => handleClick(card)} alt=''></img>
+        </div>
+        :
+        <img src={require(`../../../SpanishPlayingCards/${card.suit+card.value}.jpg`)}  height='75px' width='50px' onClick={() => handleClick(card)} alt=''></img> 
+        
+        }
     </div>
   )
 }
