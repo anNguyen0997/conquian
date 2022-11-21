@@ -138,7 +138,7 @@ export default function Header() {
               )}
             </Popover>
 
-            <Link to="/aboutus" className="text-base font-medium text-gray-500 hover:text-gray-900">
+            <Link to="/aboutus" className="flex items-center text-base font-medium text-gray-500 hover:text-gray-900">
               About Us
             </Link>
             {/* <a href="#" className="text-base font-medium text-gray-500 hover:text-gray-900">
