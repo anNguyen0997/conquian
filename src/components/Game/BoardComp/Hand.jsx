@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 
 
-function Hand({card,index,handleClick}) {
+function Hand({card,index,selectCard,user}) {
 
   const [isClicked,setClick] = useState(false)
 
@@ -28,10 +28,10 @@ function Hand({card,index,handleClick}) {
     <div>
        {isClicked ?  
         <div id='selected'>
-           <img src={require(`../../../SpanishPlayingCards/${card.suit+card.value}.jpg`)}  height='75px' width='50px' onClick={() => handleClick(card)} alt=''></img>
+           <img src={require(`../../../asset/SpanishPlayingCards/${card.suit+card.value}.jpg`)}  height='100px' width='75px' onClick={() => handleClick(card)} alt=''></img>
         </div>
         :
-        <img src={require(`../../../SpanishPlayingCards/${card.suit+card.value}.jpg`)}  height='75px' width='50px' onClick={() => handleClick(card)} alt=''></img> 
+        <img src={require(`../../../asset/SpanishPlayingCards/${card.suit+card.value}.jpg`)}  height='100px' width='75px' onClick={() => handleClick(card)} alt=''></img> 
         
         }
     </div>

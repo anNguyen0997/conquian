@@ -7,6 +7,13 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 function Player({player,moves,ctx}) {
 
     const [characters, updateCharacters] = useState(player.hand);
+    
+    let turn = true
+
+    if(ctx.turn > 6) {
+      turn = false
+    }
+    
 
     function handleGive() {
         if(player.selected.length === 1){
@@ -19,32 +26,26 @@ function Player({player,moves,ctx}) {
 
     function handleTake() {
         moves.takeCard()
-        updateCharacters(player.hand)
     }
 
     function handleSortN() {
         moves.sortDeckByValue()
-        updateCharacters(player.hand)
     }
 
     function handleSortS() {
         moves.sortDeckBySuit()
-        updateCharacters(player.hand)
     }
 
     function handleDraw() {
         moves.drawCard()
-        updateCharacters(player.hand)
     }
 
     function handlePass() {
         moves.passCard()
-        updateCharacters(player.hand)
     }
 
     function handleEndRound() {
         moves.endRound()
-        updateCharacters(player.hand)
     }
 
     function handlePay() {
@@ -72,13 +73,6 @@ function Player({player,moves,ctx}) {
 
   return (
     <div>
-        {/* Name: {player.id}
-        <div id='deck'>
-            {player.hand.map((cardObj) => {
-                let i = player.hand.indexOf(cardObj)
-                return <Hand  key={cardObj.suit+cardObj.value} card={cardObj} index={i}  handleClick={handleClick}/>
-            })}
-        </div> */}
 
         <DragDropContext onDragEnd={handleOnDragEnd}>
           <Droppable droppableId="characters" direction='horizontal'>
@@ -101,15 +95,24 @@ function Player({player,moves,ctx}) {
           </Droppable>
         </DragDropContext>
 
-
-        <button onClick={handleGive}>Give Card</button>
-        <button onClick={handleTake}>Take Card</button>
-        <button onClick={handleSortN}>Sort By Number</button>
-        <button onClick={handleSortS}>Sort By Suit</button>
-        <button onClick={handleDraw}>Draw Card</button>
-        <button onClick={handlePass}>Pass</button>
-        <button onClick={handleEndRound}>End Round</button>
-        <button onClick={handlePay}>Pay Card</button>
+        {turn ? 
+        <>
+          <button onClick={handleGive}>Give Card</button>
+          <button onClick={handleTake}>Take Card</button>
+          <button onClick={handleSortN}>Sort By Number</button>
+          <button onClick={handleSortS}>Sort By Suit</button>
+        </>
+        :
+        <>
+          <button onClick={handleSortN}>Sort By Number</button>
+          <button onClick={handleSortS}>Sort By Suit</button>
+          <button onClick={handleDraw}>Draw Card</button>
+          <button onClick={handlePass}>Pass</button>
+          <button onClick={handleEndRound}>End Turn</button>
+          <button onClick={handlePay}>Pay Card</button>
+        </>}
+        
+        
     </div>
   )
 }

@@ -6,7 +6,7 @@ import Home from '../Home/Home'
 import AboutUs from "../AboutUs/AboutUs"
 import Login from "../Login/Login"
 import Register from "../Register/Register"
-import ConquianBoard from './ConquianBoard'
+import Conquian from '../Game/Conquian'
 import TienLenBoard from './TienLenBoard'
 import NotFound404 from '../Home/NotFound404'
 import ForgotPassword from '../Login/ForgotPassword'
@@ -26,7 +26,7 @@ const BaseLayout = ({children}) => {
             <Route path="/aboutus" element={ <AboutUs/> } />
             <Route path="/register" element={ < Register/> } />
             <Route path="/login" element={ < Login/> } />
-            <Route path="/conquian" element={ < ConquianBoard/> } />
+            <Route path="/conquian" element={ < Conquian/> } />
             <Route path="/tienlen" element={ < TienLenBoard/> } />
             <Route path="/resetpassword" element={ < ForgotPassword/> } />
           </Routes>
