@@ -9,6 +9,7 @@ const Login = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const isLoggedIn = useSelector(state => state.isLoggedIn)
+  const stateEmail = useSelector(state => state.email)
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -26,7 +27,8 @@ const Login = () => {
         setLoginStatus(response.data.message)
       } else {
         setLoginStatus("")
-        dispatch(loggedIn())
+        dispatch(loggedIn(email))
+        console.log(stateEmail)
         console.log(isLoggedIn)
         navigate('/')
       }
