@@ -3,6 +3,7 @@ import { INVALID_MOVE } from 'boardgame.io/core';
 
 export function giveCard({G, ctx, events},cardIndex,) {
 
+    console.log(cardIndex)
     G.round += 1
     G.givenCards.push(G.players[ctx.playOrderPos].hand.splice(cardIndex,1)[0]) 
     events.endTurn()

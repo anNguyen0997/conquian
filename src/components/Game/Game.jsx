@@ -49,7 +49,7 @@ export const Game = {
         onEnd: ({G}) => {G.round = 0}
        }
     },
-    endIf: ({G,ctx}) => (G.players[ctx.playOrderPos].cardsDown.length === 9),
+    endIf: ({G,ctx}) => (G.players[ctx.playOrderPos].cardsDown.length === 9 || G.deck.length === 0),
     onEnd: ({G,ctx}) => {G.winner = G.players[ctx.playOrderPos].id}
 }
 

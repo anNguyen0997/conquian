@@ -3,7 +3,6 @@ import GameArea from './BoardComp/GameArea';
 import './Board.css'
 import PropTypes from "prop-types";
 import Player from "./BoardComp/Player";
-import { DragDropContext } from 'react-beautiful-dnd';
 
 
 export default class Board extends Component {
@@ -22,9 +21,7 @@ export default class Board extends Component {
             </div>
 
             <div id='player'>
-              <DragDropContext >
                 <Player player={this.props.G.players[this.props.playerID]} moves={this.props.moves} ctx={this.props.ctx}/>
-              </DragDropContext>
             </div>
 
 
