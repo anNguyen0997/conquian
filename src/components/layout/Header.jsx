@@ -285,7 +285,7 @@ export default function Header() {
                   <Link to="/login" className="text-red-600 hover:text-red-500">
                     Sign in
                   </Link>
-                  <p className="mt-8 text-center text-base text-gray-400">"Team Astro" from DigitalCrafts, Cohort of August, 2022</p>
+                  <p className="mt-8 text-center text-base text-gray-400">"Team Rocket" from DigitalCrafts, Cohort of August, 2022</p>
                 </p>
               </div>
             </div>
