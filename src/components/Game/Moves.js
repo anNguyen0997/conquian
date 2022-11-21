@@ -15,7 +15,7 @@ export function takeCard({G, ctx, events}) {
     let temp = ctx.playOrderPos + 1
     if ( temp > ctx.numPlayers - 1) {temp = 0}
     G.players[ctx.playOrderPos].hand.push(G.givenCards.slice(temp,temp+1)[0])
-    
+    G.players[ctx.playOrderPos].hand[7].selected = false
     events.endTurn()
 }
 //==========================================================================

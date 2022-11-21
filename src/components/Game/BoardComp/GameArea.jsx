@@ -5,6 +5,19 @@ import Played from './Played'
 
 function GameArea({G,playerID,ctx}) {
 
+    let turn = true
+
+    if(ctx.turn > 6) {
+      turn = false
+    }
+
+    let theWinner = true
+
+    if(G.winner !== -1){
+        theWinner = false
+    }
+    
+
     let order = []
     
     if(playerID === '0'){
@@ -37,9 +50,28 @@ function GameArea({G,playerID,ctx}) {
         </div>
 
         <div id='theDeck'>
-            <> Players {ctx.playOrderPos + 1} turn </>
-            <Deck card={G.stageCard}/>
-            <> Winner {G.winner} </>
+            
+            {theWinner ? 
+            <>
+                <> Players {ctx.playOrderPos + 1} turn </>
+                <Deck card={G.stageCard}/>
+                {turn ? 
+                <>
+                Phase: Give and Take
+                </>
+                :
+                <>
+                Phase: Draw
+                </>
+                }
+            </>
+            :
+            <>
+            Winner: {G.winner + 1}
+            </>
+            }
+            
+            
         </div>
 
         <div id='PlayerCards'>
