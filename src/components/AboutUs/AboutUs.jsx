@@ -10,14 +10,14 @@ const people = [
       role: 'Developed the game, board and its logic',
       imageUrl:
       teamimage1,
-        bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab laborum optio illum est amet vel corporis libero aperiam, adipisci officiis architecto quos repudiandae a facere sit culpa, possimus minus praesentium!',
+        bio: '',
       linkedinUrl: 'https://www.linkedin.com/in/jonathan-batalla-2b2052249/',
     },
     {
       name: 'An Nguyen',
       role: 'Developed the back-end using MySQL, including back-end login & registration validation',
       imageUrl: teamimage2,
-        bio: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi nihil cum labore quia sed. Exercitationem nobis pariatur, optio aperiam odio recusandae quam incidunt repellendus numquam consequuntur iusto doloribus voluptas quae?',
+        bio: '',
       linkedinUrl: 'https://www.linkedin.com/in/an-nguyen09/',
     },
     {
@@ -25,10 +25,10 @@ const people = [
       role: 'Developed the front-end using React.JS, TailwindCSS, & Headless UI',
       imageUrl:
         teamimage3,
-        bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt incidunt iste vero eligendi laboriosam commodi tenetur ipsam numquam amet repellat, consequuntur voluptas debitis facere eum, voluptatibus repudiandae, excepturi dolorum unde.',
+        bio: '',
       linkedinUrl: 'https://www.linkedin.com/in/kqtrinh87/',
     },
-    // More people...
+
   ]
   
   export default function Example() {

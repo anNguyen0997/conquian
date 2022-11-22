@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Deck from './Deck'
 import Played from './Played'
+import { useSelector } from 'react-redux'
 
 
 function GameArea({G,playerID,ctx}) {
+
+    const user = useSelector(state => state.email)
 
     let turn = true
 
@@ -67,7 +70,7 @@ function GameArea({G,playerID,ctx}) {
             </>
             :
             <>
-            Winner: Player {G.winner + 1}
+            Winner: Player {G.winner + 1}, {user}
             </>
             }
             
