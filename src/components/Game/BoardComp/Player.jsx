@@ -62,17 +62,17 @@ function Player({player,moves,ctx}) {
         {turn ? 
         <>
           <button onClick={handleGive}>Give Card</button>
-          <button onClick={moves.takeCard()}>Take Card</button>
-          <button onClick={moves.sortDeckByValue()}>Sort By Number</button>
-          <button onClick={moves.sortDeckBySuit()}>Sort By Suit</button>
+          <button onClick={() => moves.takeCard()}>Take Card</button>
+          <button onClick={() => moves.sortDeckByValue()}>Sort By Number</button>
+          <button onClick={() => moves.sortDeckBySuit()}>Sort By Suit</button>
         </>
         :
         <>
-          <button onClick={moves.sortDeckByValue()}>Sort By Number</button>
-          <button onClick={moves.sortDeckBySuit()}>Sort By Suit</button>
-          <button onClick={ moves.drawCard()}>Draw Card</button>
-          <button onClick={moves.passCard()}>Pass</button>
-          <button onClick={moves.endRound()}>End Turn</button>
+          <button onClick={() => moves.sortDeckByValue()}>Sort By Number</button>
+          <button onClick={() => moves.sortDeckBySuit()}>Sort By Suit</button>
+          <button onClick={() => moves.drawCard()}>Draw Card</button>
+          <button onClick={() => moves.passCard()}>Pass</button>
+          <button onClick={() => moves.endRound()}>End Turn</button>
           <button onClick={handlePay}>Pay Card</button>
         </>}
         
