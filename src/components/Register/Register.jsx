@@ -131,7 +131,7 @@ const Register = () => {
                     autoComplete="username"
                     required
                     value={input.username}
-                    pattern="^[a-zA-Z0-9]{2,10}$"
+                    pattern="^[a-zA-Z0-9]{2,20}$"
                     title="Must not include special characters."
                     onChange={onInputChange}
                     onBlur={validateInput}
@@ -175,8 +175,8 @@ const Register = () => {
                     autoComplete="current-password"
                     required
                     value={input.password}
-                    // pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,20}$" 
-                    // title="Must contain at least one letter and one number, character min-max(6 - 20)"
+                    pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,20}$" 
+                    title="Must contain at least one letter and one number, character min-max(6 - 20)"
                     onChange={onInputChange}
                     onBlur={validateInput}
                     className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-red-500 focus:outline-none focus:ring-red-500 sm:text-sm"

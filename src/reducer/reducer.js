@@ -11,7 +11,7 @@ const reducer = (state, action) => {
         case "LOGGED_IN":
             return {
                 ...state,
-                email: "",
+                email: action.email,
                 isLoggedIn: true
             }
         

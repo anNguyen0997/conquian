@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
@@ -13,11 +13,15 @@ const Login = () => {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [loginStatus, setLoginStatus] = useState("")
-  // const [authenticated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated") || false))
+  const [loginStatus, setLoginStatus] = useState("")  
+
+  useEffect(() => {
+    dispatch(loggedIn(email))
+  }, []);
+
   const handleLogin = (e) => {
     e.preventDefault()
-
+    
     axios.post('http://localhost:3001/login', {
       email: email,
       password: password
@@ -28,13 +32,11 @@ const Login = () => {
       } else {
         setLoginStatus("")
         dispatch(loggedIn(email))
-        console.log(stateEmail)
+        // console.log(stateEmail)
         console.log(isLoggedIn)
         navigate('/')
       }
-
     })
-
   }
 
   return (      
