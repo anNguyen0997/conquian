@@ -1,16 +1,17 @@
 
-export const loggedIn = (email) => {
+export const loggedIn = (newEmail) => {
     return {
         type: "LOGGED_IN",
-        email: email,
+        email: newEmail,
         isLoggedIn: true
+    
     }
 }
 
 export const loggedOut = () => {
     return {
         type: "LOGGED_OUT",
-        eamil: "",
+        email: "",
         isLoggedIn: false
     }
 }
