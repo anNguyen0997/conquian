@@ -5,7 +5,7 @@ This app is our DigitalCrafts capstone project, showcasing our creativity and th
 
 Our app currently features a multiplayer playing cards game called "[Conquian](https://en.wikipedia.org/wiki/Conquian)". The goal of the game is to work your cards into melds of sets and sequences to win this game! 
 
-## Inspiration 💡
+## 💡 Inspiration 
 
 Our team wanted to create a game together and the first thing that came to an agreement was online browser playing card games.
 We inititally thought of creating [Tiến Lên](https://en.wikipedia.org/wiki/Ti%E1%BA%BFn_l%C3%AAn), a classic Vietnamese card games,
@@ -31,7 +31,7 @@ if we can add Tiến Lên when time permit.
 
 ![App Screenshot](https://iili.io/Hd7n6sn.md.png)
  
-🎴🃏 
+
 ## 🐱‍💻 Developers
 Jonathan Batalla__
  ![](https://iili.io/HJUSS6l.th.jpg) 
