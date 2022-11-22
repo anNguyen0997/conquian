@@ -33,13 +33,13 @@ if we can add Tiến Lên when time permit.
  
 🎴🃏 
 ## 🐱‍💻 Developers
-Jonathan Batalla
+Jonathan Batalla__
  ![](https://iili.io/HJUSS6l.th.jpg) 
 
-An Nguyen
+An Nguyen__
 ![](https://iili.io/HJUS8G4.th.jpg)
 
-Khanh Trinh
+Khanh Trinh__
 ![](https://iili.io/HJUSraS.th.jpg)
 
 
