@@ -67,7 +67,7 @@ function GameArea({G,playerID,ctx}) {
             </>
             :
             <>
-            Winner: {G.winner + 1}
+            Winner: Player {G.winner + 1}
             </>
             }
             
