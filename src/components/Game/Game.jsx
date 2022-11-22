@@ -1,8 +1,30 @@
 
 import { giveCard, takeCard, drawCard, passCard, selectCard, endRound, sortDeckBySuit, sortDeckByValue, payCard } from './Moves'
 import { TurnOrder } from 'boardgame.io/core';
+import { useSelector } from 'react-redux'
+import axios from 'axios'
 
+// const userEmail = useSelector(state => state.email)
+// const newValue = newValue + 1
 
+// const incrementPlayed = (userEmail) => {  // increment games played in users' database
+//   axios.put('http://localhost:3001/updategameplayed', { gamesPlayed: newValue, email: userEmail })
+//   .then((response) => {
+//     console.log('updated games played')
+//   })
+// }
+
+// const incrementWon = (userEmail) => {   // increment games won in users' database
+//   axios.put('http://localhost:3001/updategamewon', { gamesWon: newValue, email: userEmail })
+//   .then((response) => {
+//     console.log('updated games won')
+//   })
+// }
+
+// const endGameFunction = (G, ctx) => {
+//   incrementPlayed()
+//   incrementWon()
+// }
 
 export const Game = {
     name: "Conquian",
@@ -50,7 +72,9 @@ export const Game = {
        }
     },
     endIf: ({G,ctx}) => (G.players[ctx.playOrderPos].cardsDown.length === 9 || G.deck.length === 0),
-    onEnd: ({G,ctx}) => {G.winner = G.players[ctx.playOrderPos].id}
+    // onEnd: ({G,ctx}) => {endGameFunction(G, ctx)},
+    
+    
 }
 
 function setUp(Obj) { 
